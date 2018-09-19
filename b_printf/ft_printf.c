@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 10:45:50 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/09/17 15:40:16 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/09/19 16:21:13 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -24,13 +24,6 @@ void ft_putstr(char* s)
 	i = 0;
 	while(s[i++])
 		ft_putchar(s[i]);		
-}
-
-void ft_printabsolute(int d)
-{
-	if ( d < 0 )
-		d * -1;
-	ft_putnbr(d);
 }
 
 void ft_putnbr(int d)
@@ -54,14 +47,49 @@ void ft_putnbr(int d)
 	}
 }
 
-void ft_itoa_base(int value, int base)
+char	to_hex(int64_t i)
 {
-		
+	i = i % 10;
+	return ('a' + i);
 }
 
+int	ft_putabsl(int value)
+{
+	if (value)
+		ft_putnbr(value);
+	else
+		ft_putnbr(value*-1);
+}
+
+void ft_atoib(int64_t value, int base)
+{
+		int64_t div_c;
+		int64_t mod_c;
+	
+		div_c = value;
+		mod_c = value;
+		div_c = div_c / base;
+		mod_c = mod_c % base;
+		
+			if (div_c == 0 && mod_c == 0)
+				return;
+		ft_atoib(div_c, base);
+			if (mod_c >= 10 && base > 10)
+				ft_putchar(to_hex(mod_c));
+			else
+				ft_putnbr(mod_c);
+}
+
+void ft_printf(char* flags, ...)
+{
+			
+}
 int main()
 {
-	ft_putnbr(-2132830);
-	
+	void *d = 1234;
+	printf("hello my name is paul%p\n", &d);
+	ft_putchar('\n');
+	ft_atoib(&d, 16);
+	ft_putchar('\n');
 	return (0);
 }
