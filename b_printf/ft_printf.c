@@ -14,15 +14,11 @@
 void ft_printf(char* strarg, ...)
 {
 	va_list valist;
-	int i;
+	int i, k;
 	int variables;
+	char *flags = "scdipoux";
 	node * head;
-	
-	while (starg[i])
-	{
-		if (starg[i - 1] 	
-
-
+		
 }
 
 int main()
