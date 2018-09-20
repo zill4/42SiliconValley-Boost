@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_putabsl(int value)
+void	ft_putabsl(int value)
 {
 	if (value)
 		ft_putnbr(value);

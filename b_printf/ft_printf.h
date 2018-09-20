@@ -6,12 +6,6 @@
 # include <string.h>
 # include <stdlib.h>
 
-struct Node
-{
-	int data;
-	struct Node* next;
-};
-
 void ft_atoib(int64_t value, int base);
 void ft_putabsl(int value);
 void ft_putnbr(int d);

@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
 
-void to_hex(int64_t i)
+char to_hex(int64_t i)
 {
-	i = % 10;
+	i = i % 10;
 	return ('a' + i);
 }
 
