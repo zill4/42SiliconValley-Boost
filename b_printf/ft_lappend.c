@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lappend.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 10:45:50 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/09/20 08:58:37 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/09/20 07:58:40 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/09/20 08:00:13 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_printf(char* strarg, ...)
+node *ft_lappend(node *head, int data)
 {
-	va_list valist;
-	int i;
-	int variables;
-	node * head;
-	
-	while (starg[i])
-	{
-		if (starg[i - 1] 	
+	node *rover;
 
+	rover = head;
+	while (rover->next)
+		rover = rover->next;
+	node *new_node = ft_lnew(data, NULL);
+	rover->next = new_node;
 
-}
-
-int main()
-{
-	void *d = 1234;
-	printf("hello my name is paul%p\n", &d);
-	ft_putchar('\n');
-	ft_atoib((int64_t)&d, 16);
-	ft_putchar('\n');
-	return (0);
+	return (head);
 }

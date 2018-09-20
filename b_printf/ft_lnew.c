@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lnew.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 10:45:50 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/09/20 08:58:37 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/09/20 08:01:50 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/09/20 08:03:40 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_printf(char* strarg, ...)
+node *ft_lnew(int data, node *next)
 {
-	va_list valist;
-	int i;
-	int variables;
-	node * head;
-	
-	while (starg[i])
+	node *new_node;
+
+	new_node = (node *)malloc(sizeof(node));
+	if (new_node == NULL)
 	{
-		if (starg[i - 1] 	
+		write(1, "Error Creating a new node.\n",27);
+		exit(0);
+	}
+	new_node->data = data;
+	new_node->next = next;
 
-
-}
-
-int main()
-{
-	void *d = 1234;
-	printf("hello my name is paul%p\n", &d);
-	ft_putchar('\n');
-	ft_atoib((int64_t)&d, 16);
-	ft_putchar('\n');
-	return (0);
+	return (new_node);
 }

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lcount.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 10:45:50 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/09/20 08:58:37 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/09/20 08:00:28 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/09/20 08:01:36 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_printf(char* strarg, ...)
+int	ft_lcount(node *head)
 {
-	va_list valist;
-	int i;
-	int variables;
-	node * head;
-	
-	while (starg[i])
+	node *rover;
+	int c;
+
+	rover = head;
+	c = 0;
+	while (rover)
 	{
-		if (starg[i - 1] 	
-
-
-}
-
-int main()
-{
-	void *d = 1234;
-	printf("hello my name is paul%p\n", &d);
-	ft_putchar('\n');
-	ft_atoib((int64_t)&d, 16);
-	ft_putchar('\n');
-	return (0);
+		c++;
+		rover = rover->next;
+	}
+	return (c);
 }
