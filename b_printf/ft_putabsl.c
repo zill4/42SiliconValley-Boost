@@ -2,8 +2,13 @@
 
 void	ft_putabsl(int value)
 {
+	unsigned val;
+
 	if (value)
 		ft_putnbr(value);
 	else
-		ft_putnbr(value*-1);
+	{
+		val = value + 4294967234 + 1;
+		ft_putnbr(val);
+	}
 }

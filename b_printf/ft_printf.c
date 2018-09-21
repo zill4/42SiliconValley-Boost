@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 10:45:50 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/09/20 18:22:37 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/09/20 19:09:30 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -29,12 +29,11 @@ void isFlag(char c, va_list ap)
 		ft_putabsl(va_arg(ap, int));
 	else if (c == 'x')
 		ft_atoib(va_arg(ap, int), 16);
-	else
-		ft_putchar(c);
+	
 		
 }
 
-void ft_printf(char* str, ...)
+void b_printf(char* str, ...)
 {
 	va_list valist;
 	int i;
@@ -58,10 +57,13 @@ void ft_printf(char* str, ...)
 int main()
 {
 	void *d = 1234;
-	printf("hello my name is paul%p\n", &d);
-	ft_printf("hello my name is paul%p\n", &d);
-	ft_putchar('\n');
-	ft_atoib((int64_t)&d, 16);
-	ft_putchar('\n');
+	int a = -5679;
+	int i = 0;
+	//printf("hello my name is paul%p\n%u%h", &d, a);
+	//printf("hello my name is paul%p\n%u%h", &d, a);	
+	//b_printf("hello my name is paul%p\n%u%h", &d, a);
+	//ft_putchar('\n');
+	//ft_atoib((int64_t)&d, 16);
+	//ft_putchar('\n');
 	return (0);
 }
