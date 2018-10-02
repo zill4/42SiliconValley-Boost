@@ -7,22 +7,20 @@ char to_hex(int64_t i)
 	return ('a' + i);
 }
 
-void ft_atoib(int64_t value, int base)
+void ft_atoib(long  value, int base, int *count)
 {
-		int64_t div_c;
-		int64_t mod_c;
-	
-		div_c = value;
-		mod_c = value;
-		div_c = div_c / base;
-		mod_c = mod_c % base;
-		
-			if (div_c == 0 && mod_c == 0)
-				return;
-		ft_atoib(div_c, base);
-			if (mod_c >= 10 && base > 10)
-				ft_putchar(to_hex(mod_c));
-			else
-				ft_putnbr(mod_c);
-}
+		long  div_c;
+		long  mod_c;
 
+		div_c = value / base;
+		mod_c = value % base;
+
+			if (value == 0)
+				return;
+		value = div_c;
+		ft_atoib(value, base, count);
+			if (mod_c >= 10 && base > 10)
+				ft_putchar(to_hex(mod_c), count);
+			else
+				ft_putnbr(mod_c, count);
+}

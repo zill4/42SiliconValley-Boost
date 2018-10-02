@@ -1,10 +1,13 @@
 #include "ft_printf.h"
 
-void ft_putstr(char* s)
+void ft_putstr(char* s, int *count)
 {
-	int i; 
-	
+	int i;
+
 	i = 0;
-	while(s[i])
-		ft_putchar(s[i++]);		
+	if (s == NULL)
+		ft_putstr("(null)", count);
+	else
+		while(s[i])
+			ft_putchar(s[i++], count);
 }

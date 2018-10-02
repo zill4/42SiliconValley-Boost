@@ -7,10 +7,9 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-void ft_atoib(int64_t value, int base);
-void ft_putabsl(int value);
-void ft_putnbr(int d);
-void ft_putstr(char* s);
-void ft_putchar(char c);
+void ft_atoib(long value, int base, int *count);
+void ft_putnbr(long d, int *count);
+void ft_putstr(char* s, int *count);
+void ft_putchar(char c, int *count);
 
 #endif
